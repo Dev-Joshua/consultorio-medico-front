@@ -24,8 +24,9 @@ export const routes: Routes = [
     loadComponent: () => import('./shared/components/layout/layout.component'),
     children: [
       {
-        path: 'dashboarrd',
-        loadComponent: () => import('./business/dashboard/dashboard.component'),
+        path: 'dashboard',
+        loadComponent: () =>
+          import('./business/dashboard/pages/dashboard.component'),
       },
       {
         path: 'citas',

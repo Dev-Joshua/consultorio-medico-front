@@ -6,158 +6,57 @@
   <div class="px-3 py-4 flex justify-center">
     <div class="overflow-x-auto">
       <table class="min-w-full text-md bg-white shadow-md rounded mb-4">
-        <tbody>
+        <thead>
           <tr class="border-b">
-            <th class="text-left p-1 px-2">Id</th>
-            <th class="text-left p-1 px-2">Nombre</th>
-            <th class="text-left p-1 px-2">Apellidos</th>
-            <th class="text-left p-1 px-2">Sexo</th>
-            <th class="text-left p-1 px-2">Cedula</th>
-            <th class="text-left p-1 px-2">Email</th>
-            <th class="text-left p-1 px-2">Telefono</th>
-            <th class="text-left p-1 px-2">Acciones</th>
+            <th class="text-left p-3 px-5">Id</th>
+            <th class="text-left p-3 px-5">Nombre</th>
+            <th class="text-left p-3 px-5">Apellidos</th>
+            <th class="text-left p-3 px-5">Género</th>
+            <th class="text-left p-3 px-5">Cedula</th>
+            <th class="text-left p-3 px-5">Email</th>
+            <th class="text-left p-3 px-5">Telefono</th>
+            <th class="text-left p-3 px-5">Acciones</th>
           </tr>
-          <tr class="border-b hover:bg-orange-100 bg-gray-100">
-            <td class="p-1 px-2">
-              <input type="text" value="id" class="bg-transparent" />
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let paciente of pacientes"
+            class="border-b hover:bg-orange-100 bg-gray-100"
+          >
+            <td class="p-3 px-5">
+              {{ paciente.id_paciente }}
             </td>
-            <td class="p-1 px-2">
-              <input type="text" value="nombre" class="bg-transparent" />
+            <td class="p-3 px-5">
+              {{ paciente.nombres }}
             </td>
-            <td class="p-1 px-2">
-              <input type="text" value="apellidos" class="bg-transparent" />
+            <td class="p-3 px-5">
+              {{ paciente.apellidos }}
             </td>
-            <td class="p-1 px-2">
-              <input type="text" value="sexo" class="bg-transparent" />
+            <td class="p-3 px-5">
+              {{ paciente.sexo }}
             </td>
-            <td class="p-1 px-2">
-              <input type="text" value="cedula" class="bg-transparent" />
+            <td class="p-3 px-5">
+              {{ paciente.cedula }}
             </td>
-            <td class="p-1 px-2">
-              <input type="text" value="email" class="bg-transparent" />
+            <td class="p-3 px-5">
+              {{ paciente.email }}
             </td>
-            <td class="p-1 px-2">
-              <input type="text" value="telefono" class="bg-transparent" />
+            <td class="p-3 px-5">
+              {{ paciente.telefono }}
             </td>
-            <td class="p-1 px-2 flex justify-end">
+            <td class="p-3 px-5 flex justify-end">
               <button
+                [routerLink]="['/home/pacientes/editar', paciente.id_paciente]"
                 type="button"
                 class="text-center mr-3 w-16 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
               >
-                Save</button
+                Editar</button
               ><button
+                (click)="eliminarPaciente(paciente.id_paciente)"
                 type="button"
                 class="text-center text-sm w-16 bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
               >
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr class="border-b hover:bg-orange-100 bg-gray-100">
-            <td class="p-1 px-2">
-              <input type="text" value="id" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="nombre" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="apellidos" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="sexo" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="cedula" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="email" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="telefono" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2 flex justify-end">
-              <button
-                type="button"
-                class="text-center mr-3 w-16 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
-              >
-                Save</button
-              ><button
-                type="button"
-                class="text-center text-sm w-16 bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
-              >
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr class="border-b hover:bg-orange-100 bg-gray-100">
-            <td class="p-1 px-2">
-              <input type="text" value="id" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="nombre" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="apellidos" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="sexo" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="cedula" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="email" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="telefono" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2 flex justify-end">
-              <button
-                type="button"
-                class="text-center mr-3 w-16 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
-              >
-                Save</button
-              ><button
-                type="button"
-                class="text-center text-sm w-16 bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
-              >
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr class="border-b hover:bg-orange-100 bg-gray-100">
-            <td class="p-1 px-2">
-              <input type="text" value="id" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="nombre" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="apellidos" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="sexo" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="cedula" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="email" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="telefono" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2 flex justify-end">
-              <button
-                type="button"
-                class="text-center mr-3 w-16 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
-              >
-                Save</button
-              ><button
-                type="button"
-                class="text-center text-sm w-16 bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
-              >
-                Delete
+                Eliminar
               </button>
             </td>
           </tr>

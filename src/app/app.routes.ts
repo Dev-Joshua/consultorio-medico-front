@@ -49,6 +49,13 @@ export const routes: Routes = [
         path: 'historial',
         loadComponent: () => import('./business/historial/historial.component'),
       },
+      {
+        path: 'pacientes/editar/:id',
+        loadComponent: () =>
+          import(
+            './business/pacientes/form-update-paciente/form-update-paciente.component'
+          ),
+      },
     ],
   },
 ];

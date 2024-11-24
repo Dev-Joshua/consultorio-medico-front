@@ -56,6 +56,20 @@ export const routes: Routes = [
             './business/pacientes/form-update-paciente/form-update-paciente.component'
           ),
       },
+      {
+        path: 'medicos/editar/:id',
+        loadComponent: () =>
+          import(
+            './business/medicos/form-update-medico/form-update-medico.component'
+          ),
+      },
+      {
+        path: 'consultas/editar/:id',
+        loadComponent: () =>
+          import(
+            './business/citas/form-update-citas/form-update-citas.component'
+          ),
+      },
     ],
   },
 ];

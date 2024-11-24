@@ -1,4 +1,4 @@
-export interface Paciente {
+export interface Medico {
   id_medico: number;
   nombres: string;
   apellidos: string;

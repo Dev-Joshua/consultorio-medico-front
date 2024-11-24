@@ -2,14 +2,13 @@
   <div
     class="mx-auto max-w-md px-6 py-12 bg-white border-0 shadow-lg sm:rounded-3xl"
   >
-    <h1 class="text-2xl font-bold mb-8">Formulario de Registro Médico</h1>
-    <form [formGroup]="medicoForm" (ngSubmit)="registrarMedico()">
+    <h1 class="text-2xl font-bold mb-8">Registro Medico</h1>
+    <form [formGroup]="medicoForm" (ngSubmit)="actualizarMedico()">
       <div class="relative z-0 w-full mb-5">
         <input
           type="text"
           name="nombres"
           formControlName="nombres"
-          placeholder="Ingresa nombres"
           required
           class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
         />
@@ -19,17 +18,14 @@
         <input
           type="text"
           name="apellidos"
-          placeholder="Ingresa apellidos"
           formControlName="apellidos"
-          class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
+          class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200 peer"
         />
       </div>
 
       <div class="relative z-0 w-full mb-5">
         <input
           type="text"
-          name="cedula"
-          placeholder="Ingresa cédula"
           formControlName="cedula"
           class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
         />
@@ -38,8 +34,6 @@
       <div class="relative z-0 w-full mb-5">
         <input
           type="text"
-          name="telefono"
-          placeholder="Ingresa telefono"
           formControlName="telefono"
           class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
         />
@@ -48,33 +42,32 @@
       <div class="relative z-0 w-full mb-5">
         <input
           type="email"
-          name="email"
-          placeholder="Ingresa email"
           formControlName="email"
           class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
         />
       </div>
 
       <div class="relative z-0 w-full mb-5">
-        <select
+        <input
+          type="text"
           formControlName="especialidad"
-          class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-        >
-          <option value="" disabled selected>Seleccione especialidad</option>
-          <option
-            *ngFor="let especialidad of especialidades"
-            [value]="especialidad.id_especialidad"
-          >
-            {{ especialidad.nombre_especialidad }}
-          </option>
-        </select>
+          class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
+        />
+      </div>
+
+      <div class="relative z-0 w-full mb-5">
+        <input
+          type="text"
+          formControlName="fecha_registro"
+          class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
+        />
       </div>
 
       <button
         type="submit"
         class="w-full px-6 py-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none bg-blue-500 hover:bg-blue-600 hover:shadow-lg focus:outline-none"
       >
-        Registrar Médico
+        Actualizar
       </button>
     </form>
   </div>

@@ -6,144 +6,60 @@
   <div class="px-3 py-4 flex justify-center">
     <div class="overflow-x-auto">
       <table class="min-w-full text-md bg-white shadow-md rounded mb-4">
-        <tbody>
+        <thead>
           <tr class="border-b">
-            <th class="text-left p-1 px-2">Id</th>
-            <th class="text-left p-1 px-2">Paciente</th>
-            <th class="text-left p-1 px-2">Medico</th>
-            <th class="text-left p-1 px-2">Motivo</th>
-            <th class="text-left p-1 px-2">Tratamiento</th>
-            <th class="text-left p-1 px-2">Estado</th>
-            <th class="text-left p-1 px-2">Fecha</th>
-            <th class="text-left p-1 px-2">Hora</th>
-            <th class="text-left p-1 px-2">Acciones</th>
+            <th class="text-left p-3d px-5">Id</th>
+            <th class="text-left p-3d px-5">Paciente</th>
+            <th class="text-left p-3d px-5">Medico</th>
+            <th class="text-left p-3d px-5">Motivo</th>
+            <th class="text-left p-3d px-5">Tratamiento</th>
+            <th class="text-left p-3d px-5">Estado</th>
+            <th class="text-left p-3d px-5">Fecha</th>
+            <th class="text-left p-3d px-5">Hora</th>
+            <th class="text-left p-3d px-5">Acciones</th>
           </tr>
-          <tr class="border-b hover:bg-orange-100 bg-gray-100">
-            <td class="p-1 px-2">
-              <input type="text" value="id_consulta" class="bg-transparent" />
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let consulta of consultas"
+            class="border-b hover:bg-orange-100 bg-gray-100"
+          >
+            <td class="p-3d px-5">
+              {{ consulta.id_consulta }}
             </td>
-            <td class="p-1 px-2">
-              <input type="text" value="id_paciente" class="bg-transparent" />
+            <td class="p-3d px-5">
+              {{ consulta.id_paciente }}
             </td>
-            <td class="p-1 px-2">
-              <input type="text" value="id_medico" class="bg-transparent" />
+            <td class="p-3d px-5">
+              {{ consulta.id_medico }}
             </td>
-            <td class="p-1 px-2">
-              <input
-                type="text"
-                value="motivo_consulta"
-                class="bg-transparent"
-              />
+            <td class="p-3d px-5">
+              {{ consulta.motivo_consulta }}
             </td>
-            <td class="p-1 px-2">
-              <input type="text" value="tratamiento" class="bg-transparent" />
+            <td class="p-3d px-5">
+              {{ consulta.tratamiento }}
             </td>
-            <td class="p-1 px-2">
-              <input type="text" value="estado" class="bg-transparent" />
+            <td class="p-3d px-5">
+              {{ consulta.estado }}
             </td>
-            <td class="p-1 px-2">
-              <input type="text" value="fecha" class="bg-transparent" />
+            <td class="p-3d px-5">
+              {{ consulta.fecha_cita }}
             </td>
-            <td class="p-1 px-2">
-              <input type="text" value="hora" class="bg-transparent" />
+            <td class="p-3d px-5">
+              {{ consulta.hora_cita }}
             </td>
-            <td class="p-1 px-2 flex justify-end">
+            <td class="p-3 px-5 flex justify-end">
               <button
+                [routerLink]="['/home/consultas/editar', consulta.id_consulta]"
                 type="button"
                 class="text-center mr-3 w-16 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
               >
-                Save</button
+                Editar</button
               ><button
                 type="button"
                 class="text-center text-sm w-16 bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
               >
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr class="border-b hover:bg-orange-100 bg-gray-100">
-            <td class="p-1 px-2">
-              <input type="text" value="id_consulta" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="id_paciente" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="id_medico" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input
-                type="text"
-                value="motivo_consulta"
-                class="bg-transparent"
-              />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="tratamiento" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="estado" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="fecha" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="hora" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2 flex justify-end">
-              <button
-                type="button"
-                class="text-center mr-3 w-16 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
-              >
-                Save</button
-              ><button
-                type="button"
-                class="text-center text-sm w-16 bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
-              >
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr class="border-b hover:bg-orange-100 bg-gray-100">
-            <td class="p-1 px-2">
-              <input type="text" value="id_consulta" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="id_paciente" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="id_medico" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input
-                type="text"
-                value="motivo_consulta"
-                class="bg-transparent"
-              />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="tratamiento" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="estado" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="fecha" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2">
-              <input type="text" value="hora" class="bg-transparent" />
-            </td>
-            <td class="p-1 px-2 flex justify-end">
-              <button
-                type="button"
-                class="text-center mr-3 w-16 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
-              >
-                Save</button
-              ><button
-                type="button"
-                class="text-center text-sm w-16 bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
-              >
-                Delete
+                Eliminar
               </button>
             </td>
           </tr>

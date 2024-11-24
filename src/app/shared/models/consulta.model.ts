@@ -10,7 +10,7 @@ export interface ConsultaMedica {
 }
 
 export enum Estado {
-  CONFIRMADA,
-  CANCELADA,
-  PENDIENTE,
+  Confirmada,
+  Cancelada,
+  Pendiente,
 }

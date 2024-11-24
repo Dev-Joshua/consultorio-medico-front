@@ -8,15 +8,15 @@
       <table class="min-w-full text-md bg-white shadow-md rounded mb-4">
         <thead>
           <tr class="border-b">
-            <th class="text-left p-3d px-5">Id</th>
-            <th class="text-left p-3d px-5">Paciente</th>
-            <th class="text-left p-3d px-5">Medico</th>
-            <th class="text-left p-3d px-5">Motivo</th>
-            <th class="text-left p-3d px-5">Tratamiento</th>
-            <th class="text-left p-3d px-5">Estado</th>
-            <th class="text-left p-3d px-5">Fecha</th>
-            <th class="text-left p-3d px-5">Hora</th>
-            <th class="text-left p-3d px-5">Acciones</th>
+            <th class="text-left p-3 px-5">Id</th>
+            <th class="text-left p-3 px-5">Paciente</th>
+            <th class="text-left p-3 px-5">Medico</th>
+            <th class="text-left p-3 px-5">Motivo</th>
+            <th class="text-left p-3 px-5">Tratamiento</th>
+            <th class="text-left p-3 px-5">Estado</th>
+            <th class="text-left p-3 px-5">Fecha</th>
+            <th class="text-left p-3 px-5">Hora</th>
+            <th class="text-left p-3 px-5">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -24,28 +24,28 @@
             *ngFor="let consulta of consultas"
             class="border-b hover:bg-orange-100 bg-gray-100"
           >
-            <td class="p-3d px-5">
+            <td class="p-3 px-5">
               {{ consulta.id_consulta }}
             </td>
-            <td class="p-3d px-5">
+            <td class="p-3 px-5">
               {{ consulta.id_paciente }}
             </td>
-            <td class="p-3d px-5">
+            <td class="p-3 px-5">
               {{ consulta.id_medico }}
             </td>
-            <td class="p-3d px-5">
+            <td class="p-3 px-5">
               {{ consulta.motivo_consulta }}
             </td>
-            <td class="p-3d px-5">
+            <td class="p-3 px-5">
               {{ consulta.tratamiento }}
             </td>
-            <td class="p-3d px-5">
+            <td class="p-3 px-5">
               {{ consulta.estado }}
             </td>
-            <td class="p-3d px-5">
+            <td class="p-3 px-5">
               {{ consulta.fecha_cita }}
             </td>
-            <td class="p-3d px-5">
+            <td class="p-3 px-5">
               {{ consulta.hora_cita }}
             </td>
             <td class="p-3 px-5 flex justify-end">
@@ -56,6 +56,7 @@
               >
                 Editar</button
               ><button
+                (click)="eliminarConsulta(consulta.id_consulta)"
                 type="button"
                 class="text-center text-sm w-16 bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
               >
